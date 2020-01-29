@@ -1,0 +1,213 @@
+body {
+  font-family: "Roboto", sans-serif;
+}
+.wrapper {
+  width: 770px;
+  margin: 0 auto;
+}
+
+.header {
+  min-height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header .menu {
+  display: flex;
+  list-style: none;
+}
+
+.header .menu a {
+  text-decoration: none;
+  color: #50649a;
+  margin-left: 37px;
+  margin-right: 37px;
+}
+
+.header .menu .active {
+  color: #000;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("../img/ian-froome-375650.jpg");
+  background-size: 100% 1000px;
+  background-repeat: no-repeat;
+  min-height: 260px;
+  -webkit-box-shadow: inset 4px -165px 30px -4px rgba(255, 255, 255, 1);
+  -moz-box-shadow: inset 4px -165px 30px -4px rgba(255, 255, 255, 1);
+  box-shadow: inset 4px -165px 30px -4px rgba(255, 255, 255, 1);
+}
+
+.profile-title {
+  text-align: center;
+  font-size: 70px;
+  font-weight: 100;
+  margin: 0;
+}
+
+.own-information {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.own-information.experience {
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: unset;
+}
+
+.input-text {
+  position: relative;
+  width: 520px;
+  margin-top: 25px;
+}
+
+.input-text input {
+  font-size: 20px;
+  font-weight: 400;
+  width: 100%;
+  height: 40px;
+  padding: 10px;
+  padding-top: 16px;
+  text-align: center;
+  border: 1px solid #e5e5e5;
+  border-radius: 4px;
+}
+
+.input-text label {
+  position: absolute;
+  text-align: center;
+  font-size: 24px;
+  color: #c8c8c8;
+  top: 20px;
+  width: calc(100% + 20px);
+  pointer-events: none;
+  transition: all 0.5s;
+}
+
+.input-text input:focus + label,
+.input-text input:valid + label {
+  font-size: 14px;
+  transform: translateY(-15px);
+}
+
+.input-checkbox {
+  margin: 10px;
+}
+
+.input-checkbox input[type="checkbox"] {
+  display: none;
+}
+
+.input-checkbox label::before {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-color: #fff;
+  border: 1px solid #435993;
+  border-radius: 2px;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+
+.input-checkbox input[type="checkbox"]:hover + label::before {
+  background-color: #e9efff;
+}
+
+.input-checkbox input[type="checkbox"]:checked + label::before {
+  background-color: #435993;
+  background-image: url(/img/checked.png);
+  background-position: 3px;
+  background-repeat: no-repeat;
+}
+
+.own-information__subtitle {
+  text-align: center;
+  font-size: 30px;
+  font-weight: 300;
+}
+
+.own-information__experience {
+  max-height: 110px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.max-width-p {
+  max-width: 520px;
+}
+
+.slide-container {
+  position: relative;
+  width: 100%;
+}
+
+.slide-container .js-lvls {
+  font-size: 13px;
+  font-weight: 300;
+  color: #746b68;
+  display: flex;
+  justify-content: space-between;
+}
+
+.slide-container .js-lvls .lvl {
+  max-width: 180px;
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 15px;
+  outline: none;
+  opacity: 0.9;
+  transition: opacity 0.2s;
+  background: linear-gradient(
+    to right,
+    #ccb1f1,
+    #435993,
+    rgba(67, 89, 147, 0) 50%
+  );
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 25px;
+  height: 25px;
+  margin-top: 25px;
+  margin-bottom: -25px;
+  cursor: pointer;
+  border-radius: 32px 200px 200px 200px;
+  -moz-border-radius: 32px 200px 200px 200px;
+  -webkit-border-radius: 32px 200px 200px 200px;
+  border: 1px solid;
+  transform: rotate(45deg);
+}
+
+.slider::-moz-range-thumb {
+  border-top: 100px solid red;
+  border-right: 200px solid transparent;
+  width: 25px;
+  height: 25px;
+  background: #4caf50;
+  cursor: pointer;
+}
+
+.lvl--active {
+  color: red;
+}
