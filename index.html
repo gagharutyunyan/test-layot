@@ -128,13 +128,21 @@
             </div>
             <div class="own-information about-me">
               <h2 class="own-information__subtitle icon">Расскажите о себе</h2>
-
-              <p class="max-width-p">
+              <p>
                 Напишите несколько предложений, чем привлекла наша вакансияи что
                 вы ожидаете от работы у нас.
               </p>
-              <textarea name="" id="" cols="30" rows="10"></textarea>
-              <input type="submit" value="Готово" />
+              <div class="input-about">
+                <textarea
+                  name="about"
+                  id="about"
+                  cols="30"
+                  rows="10"
+                  required
+                ></textarea>
+                <label for="about">Понравилась тем, что..</label>
+              </div>
+              <input type="submit" value="Готово" class="btn btn-submit" />
             </div>
           </form>
         </div>

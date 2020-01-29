@@ -102,6 +102,40 @@ body {
   transform: translateY(-15px);
 }
 
+.input-about {
+  position: relative;
+  width: 520px;
+  margin-top: 25px;
+  margin-bottom: 70px;
+}
+
+.input-about textarea {
+  font-size: 20px;
+  font-weight: 400;
+  width: 100%;
+  min-height: 180px;
+  padding: 10px;
+  padding-top: 20px;
+  border: 1px solid #e5e5e5;
+  border-radius: 4px;
+}
+
+.input-about label {
+  position: absolute;
+  font-size: 24px;
+  color: #c8c8c8;
+  top: 20px;
+  left: 20px;
+  pointer-events: none;
+  transition: all 0.5s;
+}
+
+.input-about textarea:focus + label,
+.input-about textarea:valid + label {
+  font-size: 14px;
+  transform: translateY(-15px);
+}
+
 .input-checkbox {
   margin: 10px;
 }
@@ -145,8 +179,8 @@ body {
   justify-content: space-between;
 }
 
-.max-width-p {
-  max-width: 520px;
+.own-information.about-me textarea {
+  width: 520px;
 }
 
 .slide-container {
@@ -210,4 +244,17 @@ body {
 
 .lvl--active {
   color: red;
+}
+
+.btn {
+  background-color: #435993; /* Green */
+  border: none;
+  color: #fff;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 9px;
 }
