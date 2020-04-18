@@ -4060,9 +4060,7 @@ function init(window, ogario, JQuery) {
       });
       JQuery(document).on(`change`, "#gamemode", function () {
         const value = this.value;
-        if (value !== ":party") {
-          app.leaveParty();
-        }
+
         app.gameMode = ogario.gameMode = value;
         app.setQuest();
       });
@@ -4958,7 +4956,7 @@ function init(window, ogario, JQuery) {
       let value = JQuery("#party-token").val();
       this.gameMode = ogario.gameMode = JQuery(`#gamemode`).val();
       this.setQuest();
-      if (this.gameMode !== ":party" || !value) {
+      if (!value) {
         return;
       }
       let newValue = value;
@@ -9621,27 +9619,27 @@ function init(window, ogario, JQuery) {
 
   function setGUI() {
     document.getElementById("quick-menu").innerHTML = `
-            <h2 id="botsInfo">
-                <a href="https://discord.gg/SDMNEcJ" target="_blank">Free Agar.io Bots</a>
-            </h2>
-            <h5 id="botsAuthor">
-                Developed by <a href="https://www.youtube.com/channel/UCZo9WmnFPWw38q65Llu5Lug" target="_blank">Nel</a>
-            </h5>
-            <span id="statusText">Status: <b id="userStatus">Disconnected</b></span>
-            <br>
-            <br>
-            <span id="aiText">Bots AI: <b id="botsAI">Disabled</b></span>
-            <br>
-            <input type="text" id="botsName" placeholder="Bots Name" maxlength="100" spellcheck="false">
-            <input type="number" id="botsAmount" placeholder="Bots Amount" min="10" max="195" spellcheck="false">
-            <button id="connect" class="btn-primary">Connect</button>
-            <br>
-            <button id="startBots" class="btn-warning" disabled>Start Bots</button>
-            <button id="stopBots" class="btn-warning">Stop Bots</button>
-            <br>
-            <br>
-            <input type="text" id="serverHost" placeholder="ws://localhost:8083" value="ws://localhost:8083" spellcheck="false">
-        `;
+          <h2 id="botsInfo">
+              <a href="https://discord.gg/SDMNEcJ" target="_blank">Free Agar.io Bots</a>
+          </h2>
+          <h5 id="botsAuthor">
+              Developed by <a href="https://www.youtube.com/channel/UCZo9WmnFPWw38q65Llu5Lug" target="_blank">Nel</a>
+          </h5>
+          <span id="statusText">Status: <b id="userStatus">Disconnected</b></span>
+          <br>
+          <br>
+          <span id="aiText">Bots AI: <b id="botsAI">Disabled</b></span>
+          <br>
+          <input type="text" id="botsName" placeholder="Bots Name" maxlength="100" spellcheck="false">
+          <input type="number" id="botsAmount" placeholder="Bots Amount" min="10" max="195" spellcheck="false">
+          <button id="connect" class="btn-primary">Connect</button>
+          <br>
+          <button id="startBots" class="btn-warning" disabled>Start Bots</button>
+          <button id="stopBots" class="btn-warning">Stop Bots</button>
+          <br>
+          <br>
+          <input type="text" id="serverHost" placeholder="ws://localhost:8083" value="ws://localhost:8083" spellcheck="false">
+      `;
     if (localStorage.getItem("localStoredBotsName") !== null) {
       window.bots.name = localStorage.getItem("localStoredBotsName");
       document.getElementById("botsName").value = window.bots.name;
@@ -9666,77 +9664,77 @@ function init(window, ogario, JQuery) {
 
   function setGUIStyle() {
     document.getElementsByTagName("head")[0].innerHTML += `
-            <style type="text/css">
-                #quick-menu {
-                    width: 280px !important;
-                    height: 580px !important;
-                }
-                #botsInfo > a, #botsAuthor > a {
-                    color: #fff;
-                    text-decoration: none;
-                }
-                #botsAuthor {
-                    margin-top: -15px;
-                    letter-spacing: 1px;
-                }
-                #statusText, #aiText {
-                    font-weight: bold;
-                    position: absolute;
-                    left: -5px;
-                }
-                #userStatus, #botsAI {
-                    color: #DA0A00;
-                }
-                #botsName, #botsAmount, #serverHost, #serverPort {
-                    margin-top: 15px;
-                    width: 144px;
-                    padding: 8px;
-                    font-size: 14.5px;
-                    outline: none;
-                    margin-left: 60px;
-                }
-                #connect, #startBots, #stopBots {
-                    color: white;
-                    border: none;
-                    padding: 7px;
-                    width: 160px;
-                    font-size: 18px;
-                    outline: none;
-                    margin-top: 15px;
-                    letter-spacing: 1px;
-                    margin-left: 50px;
-                }
-                #connect {
-                    display: inline;
-                    background-color: #0074C0;
-                }
-                #startBots {
-                    display: inline;
-                    background-color: #00C02E;
-                }
-                #stopBots {
-                    display: none;
-                    background-color: #DA0A00;
-                }
-                #connect:active {
-                    background-color: #004E82;
-                }
-                #startBots:active {
-                    background-color: #009A25;
-                }
-                #stopBots:active {
-                    background-color: #9A1B00;
-                }
-            </style>
-        `;
+          <style type="text/css">
+              #quick-menu {
+                  width: 280px !important;
+                  height: 580px !important;
+              }
+              #botsInfo > a, #botsAuthor > a {
+                  color: #fff;
+                  text-decoration: none;
+              }
+              #botsAuthor {
+                  margin-top: -15px;
+                  letter-spacing: 1px;
+              }
+              #statusText, #aiText {
+                  font-weight: bold;
+                  position: absolute;
+                  left: -5px;
+              }
+              #userStatus, #botsAI {
+                  color: #DA0A00;
+              }
+              #botsName, #botsAmount, #serverHost, #serverPort {
+                  margin-top: 15px;
+                  width: 144px;
+                  padding: 8px;
+                  font-size: 14.5px;
+                  outline: none;
+                  margin-left: 60px;
+              }
+              #connect, #startBots, #stopBots {
+                  color: white;
+                  border: none;
+                  padding: 7px;
+                  width: 160px;
+                  font-size: 18px;
+                  outline: none;
+                  margin-top: 15px;
+                  letter-spacing: 1px;
+                  margin-left: 50px;
+              }
+              #connect {
+                  display: inline;
+                  background-color: #0074C0;
+              }
+              #startBots {
+                  display: inline;
+                  background-color: #00C02E;
+              }
+              #stopBots {
+                  display: none;
+                  background-color: #DA0A00;
+              }
+              #connect:active {
+                  background-color: #004E82;
+              }
+              #startBots:active {
+                  background-color: #009A25;
+              }
+              #stopBots:active {
+                  background-color: #9A1B00;
+              }
+          </style>
+      `;
   }
 
   function loadUI() {
     $("#overlays-hud").append(`
- <div id="botClient" class="hud-b hud-text-center" style="text-align: center; color: #fff; position: fixed; pointer-events: none; font-size: 75%; white-space: nowrap; padding: 0; top: 42%; display: block; width: 200px; right: 10px;">
- <div style="margin: 6px;"><b>Bot Count</b>: <span id="botCount" class="label hud-main-color pull-right" style="margin: 0.55em 0 0 0; padding: 0 0.55em 0 0;">Waiting</span></div>
- <b><div style="padding: 0 10px 6px;"><b>ServerSlots</b>: <span id="slots" class="label hud-main-color pull-right" style="margin: 0.55em 0 0 0;">Waiting</span></div>
- </b></div>`);
+<div id="botClient" class="hud-b hud-text-center" style="text-align: center; color: #fff; position: fixed; pointer-events: none; font-size: 75%; white-space: nowrap; padding: 0; top: 42%; display: block; width: 200px; right: 10px;">
+<div style="margin: 6px;"><b>Bot Count</b>: <span id="botCount" class="label hud-main-color pull-right" style="margin: 0.55em 0 0 0; padding: 0 0.55em 0 0;">Waiting</span></div>
+<b><div style="padding: 0 10px 6px;"><b>ServerSlots</b>: <span id="slots" class="label hud-main-color pull-right" style="margin: 0.55em 0 0 0;">Waiting</span></div>
+</b></div>`);
   }
 
   function setGUIEvents() {
@@ -9754,42 +9752,50 @@ function init(window, ogario, JQuery) {
         localStorage.setItem("localStoredBotsAmount", window.bots.amount);
       });
     document.getElementById("connect").addEventListener("click", () => {
-      if (
-        !window.connection.ws ||
-        window.connection.ws.readyState !== WebSocket.OPEN
-      )
-        window.connection.connect();
+      if (application.gameMode == ":party") {
+        if (
+          !window.connection.ws ||
+          window.connection.ws.readyState !== WebSocket.OPEN
+        )
+          window.connection.connect();
+      } else {
+        toastr["info"]("Party bots only available for Party mode");
+      }
     });
     document.getElementById("startBots").addEventListener("click", () => {
-      if (
-        window.game.url &&
-        window.game.protocolVersion &&
-        window.game.clientVersion &&
-        !window.user.startedBots
-      ) {
+      if (application.gameMode == ":party") {
         if (
-          window.bots.name &&
-          window.bots.amount &&
-          window
-            .getComputedStyle(
-              document.getElementsByClassName("btn-login-play")[0]
-            )
-            .getPropertyValue("display") === "none"
-        )
-          window.connection.send(
-            window.buffers.startBots(
-              window.game.url,
-              window.game.protocolVersion,
-              window.game.clientVersion,
-              window.user.isAlive,
-              window.unescape(window.encodeURIComponent(window.bots.name)),
-              window.bots.amount
-            )
-          );
-        else
-          toastr.info(
-            "Bots name, amount and user login are required before starting the bots"
-          );
+          window.game.url &&
+          window.game.protocolVersion &&
+          window.game.clientVersion &&
+          !window.user.startedBots
+        ) {
+          if (
+            window.bots.name &&
+            window.bots.amount &&
+            window
+              .getComputedStyle(
+                document.getElementsByClassName("btn-login-play")[0]
+              )
+              .getPropertyValue("display") === "none"
+          )
+            window.connection.send(
+              window.buffers.startBots(
+                window.game.url,
+                window.game.protocolVersion,
+                window.game.clientVersion,
+                window.user.isAlive,
+                window.unescape(window.encodeURIComponent(window.bots.name)),
+                window.bots.amount
+              )
+            );
+          else
+            toastr.info(
+              "Bots name, amount and user login are required before starting the bots"
+            );
+        }
+      } else {
+        alert("Bots are designed for party");
       }
     });
     document.getElementById("stopBots").addEventListener("click", () => {
